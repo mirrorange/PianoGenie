@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Piano Genie</title>
+    <title>钢琴精灵</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover">
@@ -14,12 +14,10 @@
   </head>  
   <body>  
     <div class="splash">
-      <h1>Piano Genie</h1>
+      <h1>钢琴精灵</h1>
       <div class="splash-main">        
-        <p>Have some fun pretending you're a piano virtuoso using machine learning!</p>
-        <p>Use the <b>1-8</b> numbered keys on your keyboard (or the home row <b>a-f</b> and <b>j-;</b>) or <b>touch</b> the 
-          coloured blocks to play the piano. Use the <b>space bar</b> to control the sustain pedal. The more
-          you pretend you're a real player, the better the melody (and you!) will sound.
+        <p>一个 AI 驱动的 8 键或 4 键钢琴！</p>
+        <p>按下键盘上数字 1-8 键或点击彩色的块来弹钢琴。使用空格键控制延音踏板。 你越把自己当作一个真的演奏者，你的旋律听起来会越好。
         </p>
 
         <div class="rotate-phone" hidden>
@@ -32,8 +30,7 @@
         <button class="splash-button loading" id="playBtn" disabled onclick="showMainScreen()" autofocus><span>Loading...</span></button>
       </div>
       <p class="built-with">
-        Built with <a target="_blank" href="https://magenta.tensorflow.org">magenta.js</a>. Learn more about <a target="_blank" href="https://magenta.tensorflow.org/pianogenie">how it works</a>,
-        or see the code on <a target="_blank" href="https://glitch.com/edit/#!/piano-genie">Glitch</a>.
+        本项目基于 <a target="_blank" href="https://magenta.tensorflow.org">magenta.js</a> 构建。你可以前往 <a target="_blank" href="https://magenta.tensorflow.org/pianogenie">magenta</a> 了解更多有关它的信息。你可以在 <a target="_blank" href="https://glitch.com/edit/#!/piano-genie">Glitch</a> 找到这里的源代码。这里是由 <a target="_blank" href="https://xn--i8sr36a.wang/">橘子</a> 翻译和搭建的镜像站点。
       </p>
     </div>
     
@@ -60,22 +57,22 @@
     <div class="dialog" id="settingsBox" hidden>
       <h2>Game Controls</h2>
       <p>
-        Number of buttons:
+        按键数量:
         <label class="radio">
           <input name="num" type="radio" id="numButtons4">
           <span class="control-indicator"></span>
-          4
+          4键
         </label>
         <label class="radio">
           <input name="num" type="radio" id="numButtons8" checked>
           <span class="control-indicator"></span>
-          8
+          8键
         </label>
       </p>
-      <h2>Input Settings</h2>
+      <h2>音频输入设置</h2>
       <p>
         <label class="radio">
-          Current device (computer/phone)
+          当前设备 （电脑/手机）
           <input name="input" type="radio" id="radioDeviceYes" checked>
           <span class="control-indicator"></span>
         </label>
@@ -87,7 +84,7 @@
         </label>
         <br>
         <label class="radio">
-          MIDI Input 
+          MIDI 输入 
           <input name="input" type="radio" id="radioMidiInYes">
           <span class="control-indicator"></span>
         </label>
@@ -96,16 +93,16 @@
         </span>
       </p>
     
-      <h2>Audio Output Settings</h2>
+      <h2>音频输出设置</h2>
       <p>
         <label class="radio">
-          Current device (computer/phone)
+          当前设备 （电脑/手机）
           <input name="output" type="radio" id="radioAudioYes" checked>
           <span class="control-indicator"></span>
         </label>
         <br>
         <label class="radio">
-          MIDI Output
+          MIDI 输出
           <input name="output" type="radio" id="radioMidiOutYes">
           <span class="control-indicator"></span>
         </label>
@@ -115,8 +112,7 @@
       </p>
       
       <p id="midiNotSupported">
-        Unfortunately, this browser does not support WebMIDI, which is only
-        supported in Chrome and Opera.
+        很抱歉，这个浏览器不支持 WebMIDI，只有 Chrome 或 Opera 可以支持它。
       </p>
       
       <button class="splash-button small" onclick="settingsBox.hidden = !settingsBox.hidden">Close</button>
